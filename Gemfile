@@ -11,6 +11,7 @@ gem 'rails', '4.2.0'
  
  group :development do
    gem 'sqlite3'
+   gem 'rails-erd'
  end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
