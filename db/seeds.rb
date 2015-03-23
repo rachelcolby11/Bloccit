@@ -25,11 +25,19 @@
    )
  end
 
-
   comment = post.comments.where(body: "This is my comment from the seed").first
   unless comment    
     Comment.create(post: post, body: "This is my comment from the seed")
   end
+
+ #create ads
+ 50.times do
+   Advertisement.create!(
+     title:  Faker::Lorem.sentence,
+     copy:   Faker::Lorem.paragraph
+   )
+ end
+ ads = Advertisement.all
 
  puts "Seed finished"
  puts "#{Post.count} posts created"
