@@ -8,6 +8,14 @@
    )
  end
  posts = Post.all
+
+ post = Post.where(title: "My unique title").first
+ unless post
+   post = Post.create!(
+    title: "My unique title",
+    body: "My unique body"
+   )
+ end
  
  # Create Comments
  100.times do
@@ -16,7 +24,13 @@
      body: Faker::Lorem.paragraph
    )
  end
- 
+
+
+  comment = post.comments.where(body: "This is my comment from the seed").first
+  unless comment    
+    Comment.create(post: post, body: "This is my comment from the seed")
+  end
+
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
