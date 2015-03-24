@@ -5,11 +5,11 @@ class AdvertisementsController < ApplicationController
   end
 
   def show
-    @ads = Advertisement.find(params[:id])
+    @ad = Advertisement.find(params[:id])
   end
 
   def new
-    @ads = Advertisement.new
+    @ad = Advertisement.new
   end
 
    def create
