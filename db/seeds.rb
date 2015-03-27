@@ -31,13 +31,14 @@
  end
  posts = Post.all
 
- post = Post.where(title: "My unique title").first
- unless post
-   post = Post.create!(
-    title: "My unique title",
-    body: "My unique body"
-   )
- end
+ # post = Post.where(title: "My unique title").first
+ # unless post
+ #   post = Post.create!(
+ #      user: users.sample,
+ #    title: "My unique title",
+ #    body: "My unique body"
+ #   )
+ # end
  
  # Create Comments
  100.times do
@@ -48,10 +49,10 @@
    )
  end
 
-  comment = post.comments.where(body: "This is my comment from the seed").first
-  unless comment    
-    Comment.create(post: post, body: "This is my comment from the seed")
-  end
+  # comment = post.comments.where(body: "This is my comment from the seed").first
+  # unless comment    
+  #   Comment.create(post: post, body: "This is my comment from the seed")
+  # end
 
  user = User.first
  user.skip_reconfirmation!
