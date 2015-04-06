@@ -1,0 +1,21 @@
+<!-- The partial should take topic and post local variables. The form within the partial should submit to [topic, post, post.comments.new], so that it routes correctly given our nested routes, and initializes a new comment for users to create by submitting the form. -->
+
+ <%= form_for [topic, post, comment] do |f| %>
+   <% if comment.errors.any? %>
+     <div class="alert alert-danger">
+       <h4>There are <%= pluralize(comment.errors.count, "error") %>.</h4>
+       <ul>
+         <% comment.errors.full_messages.each do |msg| %>
+           <li><%= msg %></li>
+         <% end %>
+       </ul>
+     </div>
+   <% end %>
+   <%= form_group_tag(comment.errors[:body]) do %>
+     <%= f.label "Join the conversation!" %>
+     <%= f.text_area :body, rows: 4, class: 'form-control', placeholder: "Add your comment here" %>
+   <% end %> 
+   <div class="form-group">
+     <%= f.submit "Save", class: 'btn btn-success' %>
+   </div>
+ <% end %>
