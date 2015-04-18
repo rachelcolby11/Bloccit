@@ -1,6 +1,6 @@
  class CommentPolicy < ApplicationPolicy
 
-   def show?
+  def show?
     true
   end
 
