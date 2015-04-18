@@ -1,6 +1,5 @@
  require 'faker'
  
-  # Create Users
  10.times do
    user = User.new(
      name:     Faker::Name.name,
