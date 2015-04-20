@@ -10,12 +10,8 @@
    before do
      @user = authenticated_user#(name: "User Name")
      @post = associated_post(user: @user)
-     @comment = comment_without_email  
+     @comment = comment_without_email(user: @user, post: @post) 
      
-     # OLD CODE:
-     # @comment = Comment.new(user: @user, post: @post, body: "A Comment")
-     # allow(@comment).to receive(:send_favorite_emails)
-     # @comment.save! 
   end
  
    describe "not signed in" do

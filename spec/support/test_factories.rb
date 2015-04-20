@@ -19,10 +19,12 @@ module TestFactories
      user
    end
 
-   def comment_without_email
-     comment = Comment.new(user: authenticated_user, post: associated_post, body: "A Comment")
+   def comment_without_email(options={})
+     comment_options = {user: authenticated_user, post: associated_post, body: "A Comment"}.merge(options)
+     comment = Comment.new(comment_options)
      allow(comment).to receive(:send_favorite_emails)
      comment.save!
+     comment
    end
 
 end
