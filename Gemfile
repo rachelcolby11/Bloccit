@@ -14,8 +14,11 @@ gem 'rails', '4.2.0'
    gem 'pry-rails'
     gem 'better_errors'
     gem 'binding_of_caller'
-
  end
+
+ group :development, :production do
+  gem 'puma'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 3.2'
 #Bootstrap
