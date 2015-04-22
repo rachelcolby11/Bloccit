@@ -2,22 +2,21 @@ require 'rails_helper'
  
  describe Comment do
  
-   include TestFactories
+   include FactoryGirl
  
    describe "after_create" do
  
      before do
-       @post = associated_post
-       @user = authenticated_user(email_favorites: true)
-       @commenter = authenticated_user
-       @comment = Comment.new(body: 'My comment is really great', post: @post, user_id: @commenter)
+       @post = create(:post)
+       @user = create(:user, email_favorites: true)
+       @commenter = create(:user)
+       @comment = build(:comment, post: @post, user_id: @commenter.id)
      end
  
       context "with user's permission" do
 
      it "sends an email to users who have favorited the post" do
-       favorite = @user.favorites.create(post: @post)
-       Rails.logger.info ">>>> Favorite: #{favorite.inspect}"
+       favorite = @post.favorites.create(user: @user)
  
        allow( FavoriteMailer )
          .to receive(:new_comment)
@@ -28,7 +27,6 @@ require 'rails_helper'
            .to receive(:new_comment)
  
       result = @comment.save
-      Rails.logger.info ">>>>> #{result}"
       result
      end
  

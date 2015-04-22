@@ -30,9 +30,7 @@
     <%= render partial: 'favorites/favorite', locals: { post: @post } %>
   <div class="col-md-8">
     <h4>Comments</h4>
-    <% @comments.each do |comment| %>
-      <%= render partial: 'comments/comment', collection: @comments %>
-      <% end %>
+    <%= render partial: 'comments/comment', collection: @comments %>
     </div>
   <div class="col-md-8"; style = "margin-top: 15px;" > 
     <% if policy(@comment).create? %>

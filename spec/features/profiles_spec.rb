@@ -5,12 +5,12 @@
  
  describe "Visiting profiles" do
  
-   include TestFactories
+   include FactoryGirl
  
    before do
-     @user = authenticated_user#(name: "User Name")
-     @post = associated_post(user: @user)
-     @comment = comment_without_email(user: @user, post: @post) 
+     @user = create(:user) 
+     @post = create(:post, user: @user) 
+     @comment = create(:comment, user: @user, post: @post) 
      
   end
  
