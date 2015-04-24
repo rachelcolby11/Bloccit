@@ -7,11 +7,10 @@
  
    include FactoryGirl
  
-   before do
-     @user = create(:user) 
-     @post = create(:post, user: @user) 
-     @comment = create(:comment, user: @user, post: @post) 
-     
+   before do 
+     @user = create(:user_with_post_and_comment)
+     @post = @user.posts.first
+     @comment = @user.comments.first     
   end
  
    describe "not signed in" do
