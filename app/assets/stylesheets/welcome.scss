@@ -4,7 +4,27 @@
 
 .jumbotron.y {
   background-color: #cdfed9;
-  border-style: solid;
-  border-width: 3px;
-  border-color: red;
+  width: 100%;
+  border: 3px solid red;
+}
+
+.box {
+  background-color: #cdfed9;
+  box-sizing: border-box;
+  border-top: 3px solid red;
+  border-bottom: 3px solid red;
+  outline: 3px solid #b8e5ff;
+
+}
+
+.left-edge {
+  border-left: 3px solid red;
+}
+
+.right-edge {
+  border-right: 3px solid red;
+}
+
+.center {
+  text-align: center;
 }
