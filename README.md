@@ -1,11 +1,11 @@
-##### [Bloccit-RC](https://bloccit-rc.herokuapp.com/) 
-
-https://bloccit-rc.herokuapp.com (demo version)
-https://github.com/rachelcolby11/Bloccit (source code)
-
-### Overview
+## [Bloccit](https://bloccit-rc.herokuapp.com/) 
 
 Bloccit, a Reddit replica, is the first app I made as a student at [Bloc](http://bloc.io). Bloccit is a Ruby on Rails app that lets users post, comment, and vote on links and content.
+
+* The app is deployed on Heroku: https://bloccit-rc.herokuapp.com
+* The source code is here on GitHub: https://github.com/rachelcolby11/Bloccit
+
+---
 
 ### Technologies
 **Languages, Libraries, and Frameworks:** Ruby on Rails, jQuery, AJAX, Bootstrap
@@ -21,6 +21,8 @@ Bloccit, a Reddit replica, is the first app I made as a student at [Bloc](http:/
 * Redcarpet for Markdown formatting
 * Will_paginate for pagination 
 * Pundit for authorization
+
+---
 
 ### Features
 * Users and guests (those without accounts) can view public topics, posts, and comments.
